@@ -13,6 +13,7 @@ import {
   ArrowRight,
 } from "@phosphor-icons/react";
 import Nav from "./components/Nav";
+import { subscribeNewsletter } from "./actions";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -404,6 +405,34 @@ export default function Home() {
               </a>
             </motion.div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="py-20 bg-foam">
+        <div className="max-w-xl mx-auto px-4 sm:px-6 text-center">
+          <h2 className="font-serif text-3xl font-black text-roast mb-4">
+            Restez dans la boucle
+          </h2>
+          <p className="text-grain mb-8">
+            Recevez nos conseils brewing, les nouvelles origines et les offres exclusives.
+          </p>
+          <form action={subscribeNewsletter} className="flex flex-col sm:flex-row gap-3">
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="votre@email.fr"
+              className="flex-1 border border-foam rounded-full px-6 py-3.5 text-roast bg-white focus:outline-none focus:ring-2 focus:ring-lumiere transition"
+            />
+            <button
+              type="submit"
+              className="bg-lumiere text-roast px-8 py-3.5 rounded-full font-bold hover:bg-lumiere/90 transition-colors whitespace-nowrap"
+            >
+              S&apos;inscrire
+            </button>
+          </form>
+          <p className="text-xs text-smoke mt-4">Pas de spam. Désabonnement en un clic.</p>
         </div>
       </section>
 
