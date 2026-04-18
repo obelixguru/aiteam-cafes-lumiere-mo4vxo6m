@@ -42,11 +42,12 @@ export default function Home() {
               Café de spécialité · Abonnement
             </span>
             <h1 className="font-serif text-5xl sm:text-6xl font-black leading-tight text-roast mb-6">
-              Le grand café,<br />
-              <span className="text-lumiere">sans y penser.</span>
+              Café de spécialité<br />
+              <span className="text-lumiere">torréfié à la demande,</span><br />
+              livré chez vous.
             </h1>
             <p className="text-lg text-grain leading-relaxed mb-4 max-w-lg">
-              Chaque mois, votre café de spécialité torréfié à la demande arrive chez vous en 72h. Frais, éthique, et exactement à votre goût.
+              Découvrez un nouveau producteur chaque mois. 19€/mois. Sans engagement.
             </p>
             <p className="inline-flex items-center gap-2 text-fresh text-sm font-semibold mb-8">
               <CheckCircle size={18} weight="fill" />
