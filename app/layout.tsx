@@ -18,7 +18,7 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
-const siteUrl = "https://cafes-lumiere.vercel.app";
+const siteUrl = "https://cafes-lumiere-qi6okvehs-nueve9.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
