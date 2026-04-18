@@ -8,16 +8,16 @@ import { CheckCircle, ArrowRight, ArrowLeft } from "@phosphor-icons/react";
 const steps = ["Votre email", "Adresse", "Paiement"];
 
 const planNames: Record<string, string> = {
-  découverte: "Découverte — 19€/mois",
-  passion: "Passion — 29€/mois",
-  expert: "Expert — 45€/mois",
+  découverte: "Découverte — 15€/mois",
+  lumière: "Lumière — 19€/mois",
+  prestige: "Prestige — 29€/mois",
 };
 
 function CheckoutInner() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const plan = searchParams.get("plan") || "passion";
-  const price = searchParams.get("price") || "29";
+  const plan = searchParams.get("plan") || "lumière";
+  const price = searchParams.get("price") || "19";
 
   const [step, setStep] = useState(0);
   const [isPending, setIsPending] = useState(false);
