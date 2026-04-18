@@ -8,11 +8,11 @@ import {
   Package,
   Star,
   Leaf,
-  Heart,
   Globe,
   CheckCircle,
   ArrowRight,
 } from "@phosphor-icons/react";
+import Nav from "./components/Nav";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -26,25 +26,7 @@ const stagger = {
 export default function Home() {
   return (
     <main className="min-h-screen bg-cream text-roast font-sans">
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-foam">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-          <Link href="/">
-            <img src="/logo.svg" alt="Cafés Lumière" className="h-10" />
-          </Link>
-          <div className="hidden md:flex items-center gap-8 text-sm font-medium text-bark">
-            <Link href="#comment" className="hover:text-lumiere transition-colors">Comment ça marche</Link>
-            <Link href="#pricing" className="hover:text-lumiere transition-colors">Abonnements</Link>
-            <Link href="/notre-demarche" className="hover:text-lumiere transition-colors">Notre démarche</Link>
-          </div>
-          <Link
-            href="#pricing"
-            className="bg-roast text-cream px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-bark transition-colors"
-          >
-            Commencer
-          </Link>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Hero */}
       <section className="pt-32 pb-20 px-4 sm:px-6 max-w-6xl mx-auto">
