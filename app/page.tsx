@@ -445,7 +445,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6">
           <div className="grid md:grid-cols-4 gap-10 mb-10">
             <div className="md:col-span-2">
-              <img src="/logo.svg" alt="Cafés Lumière" className="h-10 mb-4 brightness-200" />
+              <Image src="/logo.svg" alt="Cafés Lumière" width={140} height={40} className="mb-4 brightness-200" />
               <p className="text-sm leading-relaxed max-w-xs">
                 Le meilleur café de spécialité, torréfié à la demande et livré chez vous en 72h.
               </p>

@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Playfair_Display, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import ExitIntentPopup from "./components/ExitIntentPopup";
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
@@ -17,20 +18,47 @@ const jakarta = Plus_Jakarta_Sans({
   display: "swap",
 });
 
+const siteUrl = "https://cafes-lumiere.vercel.app";
+
 export const metadata: Metadata = {
-  title: "Cafés Lumière — Abonnement café de spécialité",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "Cafés Lumière — Abonnement café de spécialité",
+    template: "%s — Cafés Lumière",
+  },
   description:
     "Recevez chaque mois un café de spécialité torréfié à la demande, livré sous 72h. Abonnement flexible, qualité barista, satisfaction garantie.",
   openGraph: {
     title: "Cafés Lumière — Abonnement café de spécialité",
     description: "Torréfié à la demande · Livré sous 72h · Satisfait ou remboursé",
     siteName: "Cafés Lumière",
+    url: siteUrl,
+    type: "website",
+    locale: "fr_FR",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cafés Lumière — Abonnement café de spécialité",
+    description: "Torréfié à la demande · Livré sous 72h · Satisfait ou remboursé",
+  },
+  alternates: {
+    canonical: siteUrl,
   },
 };
 
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+};
+
+const orgJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Cafés Lumière",
+  url: siteUrl,
+  description:
+    "Abonnement café de spécialité torréfié à la demande. Livré sous 72h, dès 19€/mois.",
+  sameAs: [],
 };
 
 export default function RootLayout({
@@ -40,7 +68,18 @@ export default function RootLayout({
 }) {
   return (
     <html lang="fr" className={`${playfair.variable} ${jakarta.variable}`}>
-      <body>{children}</body>
+      <head>
+        <link rel="preconnect" href="https://images.unsplash.com" />
+        <link rel="dns-prefetch" href="https://images.unsplash.com" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
+      </head>
+      <body>
+        {children}
+        <ExitIntentPopup />
+      </body>
     </html>
   );
 }
