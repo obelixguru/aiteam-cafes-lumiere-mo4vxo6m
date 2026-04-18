@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-roast: #3D1F0D;
+  --color-lumiere: #F5A623;
+  --color-grain: #8B5E3C;
+  --color-cream: #FDF8F2;
+  --color-foam: #EDE0CC;
+  --color-bark: #4A3728;
+  --color-smoke: #9E8C7B;
+  --color-fresh: #2D6A4F;
+}
+
+@layer base {
+  body {
+    @apply bg-cream text-roast font-sans;
+  }
+  h1, h2, h3, h4 {
+    @apply font-serif;
+  }
+}
