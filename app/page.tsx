@@ -30,7 +30,7 @@ export default function Home() {
       <Nav />
 
       {/* Hero */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 max-w-6xl mx-auto">
+      <section className="pt-32 pb-20 px-4 sm:px-6 max-w-6xl mx-auto bg-gradient-to-b from-[#F3E8E0] to-cream">
         <motion.div
           initial="hidden"
           animate="visible"
@@ -209,6 +209,7 @@ export default function Home() {
             <motion.div
               key={title}
               variants={fadeUp}
+              whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
               className="group bg-foam rounded-2xl p-8 hover:shadow-lg transition-shadow"
             >
               <div className={`inline-flex p-3 rounded-xl ${color} mb-5`}>
@@ -274,6 +275,7 @@ export default function Home() {
               <motion.div
                 key={tier.name}
                 variants={fadeUp}
+                whileHover={{ scale: 1.02, transition: { duration: 0.2 } }}
                 className={`relative rounded-3xl p-8 flex flex-col ${
                   tier.highlight
                     ? "bg-lumiere ring-4 ring-lumiere shadow-2xl shadow-lumiere/30 scale-105"
