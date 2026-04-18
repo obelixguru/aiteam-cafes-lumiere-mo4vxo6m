@@ -45,8 +45,12 @@ export default function Home() {
               Le grand café,<br />
               <span className="text-lumiere">sans y penser.</span>
             </h1>
-            <p className="text-lg text-grain leading-relaxed mb-8 max-w-lg">
+            <p className="text-lg text-grain leading-relaxed mb-4 max-w-lg">
               Chaque mois, votre café de spécialité torréfié à la demande arrive chez vous en 72h. Frais, éthique, et exactement à votre goût.
+            </p>
+            <p className="inline-flex items-center gap-2 text-fresh text-sm font-semibold mb-8">
+              <CheckCircle size={18} weight="fill" />
+              Sans engagement · Résiliation en 1 clic
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
               <a

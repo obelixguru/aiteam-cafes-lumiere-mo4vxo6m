@@ -110,6 +110,18 @@ export default function FaqPage() {
           </Link>
         </div>
       </section>
+
+      {/* Footer */}
+      <footer className="bg-roast text-smoke py-8">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
+          <p>© {new Date().getFullYear()} Cafés Lumière</p>
+          <div className="flex gap-6">
+            <Link href="/" className="hover:text-cream transition-colors">Accueil</Link>
+            <Link href="/#pricing" className="hover:text-cream transition-colors">Abonnements</Link>
+            <Link href="/notre-demarche" className="hover:text-cream transition-colors">Notre démarche</Link>
+          </div>
+        </div>
+      </footer>
     </main>
   );
 }

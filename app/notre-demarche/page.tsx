@@ -4,6 +4,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Leaf, HandHeart, MagnifyingGlass, ArrowRight } from "@phosphor-icons/react";
+import Nav from "../components/Nav";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -17,20 +18,7 @@ const stagger = {
 export default function NotreDemarche() {
   return (
     <main className="min-h-screen bg-cream text-roast font-sans">
-      {/* Nav */}
-      <nav className="fixed top-0 left-0 right-0 z-50 bg-cream/90 backdrop-blur-sm border-b border-foam">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex items-center justify-between h-16">
-          <Link href="/">
-            <img src="/logo.svg" alt="Cafés Lumière" className="h-10" />
-          </Link>
-          <Link
-            href="/#pricing"
-            className="bg-roast text-cream px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-bark transition-colors"
-          >
-            Nos abonnements
-          </Link>
-        </div>
-      </nav>
+      <Nav />
 
       {/* Hero */}
       <section className="pt-32 pb-20 px-4 sm:px-6 max-w-5xl mx-auto">
@@ -100,7 +88,7 @@ export default function NotreDemarche() {
                   icon: Leaf,
                   color: "bg-fresh/10 text-fresh",
                   title: "Durabilité",
-                  desc: "Emballages compostables, partenariats équitables, bilan carbone compensé. L&apos;environnement n&apos;est pas une option pour nous.",
+                  desc: "Emballages compostables, partenariats équitables, bilan carbone compensé. L'environnement n'est pas une option pour nous.",
                 },
                 {
                   icon: HandHeart,
@@ -120,7 +108,7 @@ export default function NotreDemarche() {
                     <Icon size={28} weight="fill" />
                   </div>
                   <h3 className="font-serif text-xl font-bold text-roast mb-3">{title}</h3>
-                  <p className="text-grain leading-relaxed" dangerouslySetInnerHTML={{ __html: desc.replace(/&apos;/g, "'") }} />
+                  <p className="text-grain leading-relaxed">{desc}</p>
                 </motion.div>
               ))}
             </div>
