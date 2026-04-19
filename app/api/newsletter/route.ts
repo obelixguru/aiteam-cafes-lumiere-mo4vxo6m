@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const BASE_URL = 'https://cafes-lumiere-qi6okvehs-nueve9.vercel.app'
+const BASE_URL = 'https://cafes-lumiere.vercel.app'
 const FROM = 'Cafés Lumière <bonjour@cafes-lumiere.fr>'
 
 const EMAIL_J0 = (email: string) => ({
