@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-const BASE_URL = 'https://cafes-lumiere-qi6okvehs-nueve9.vercel.app'
+const BASE_URL = 'https://cafes-lumiere.vercel.app'
 
 // Placeholder Stripe price IDs — replace with real ones from Stripe Dashboard
 const PRICE_IDS: Record<string, { priceId: string; name: string; amount: number }> = {

@@ -86,7 +86,7 @@ Pour tirer le meilleur de votre café de spécialité, quelques règles simples 
 
 ---
 
-*Envie de découvrir de nouveaux cafés de spécialité torréfiés à la demande ? [Découvrez notre abonnement mensuel](https://cafes-lumiere-qi6okvehs-nueve9.vercel.app/pricing) — 19€/mois, sans engagement.*`
+*Envie de découvrir de nouveaux cafés de spécialité torréfiés à la demande ? [Découvrez notre abonnement mensuel](https://cafes-lumiere.vercel.app/pricing) — 19€/mois, sans engagement.*`
   }
 
   const frontmatter = `---

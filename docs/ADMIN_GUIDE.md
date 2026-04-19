@@ -4,7 +4,7 @@
 
 | Ressource | URL |
 |-----------|-----|
-| Site production | https://cafes-lumiere-qi6okvehs-nueve9.vercel.app |
+| Site production | https://cafes-lumiere.vercel.app |
 | GitHub repo | https://github.com/obelixguru/aiteam-cafes-lumiere-mo4vxo6m |
 | Vercel Dashboard | https://vercel.com/dashboard |
 
