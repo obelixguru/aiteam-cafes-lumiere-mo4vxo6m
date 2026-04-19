@@ -1,8 +1,41 @@
 import Link from "next/link";
+import JsonLd from "./components/JsonLd";
+
+const productSchemas = [
+  { name: "Découverte", price: "19.00", desc: "250g de café de spécialité torréfié à la commande, 1 origine, mouture personnalisée" },
+  { name: "Duo", price: "29.00", desc: "500g de café de spécialité torréfié à la commande, 2 origines, notes de dégustation" },
+  { name: "Famille", price: "49.00", desc: "1kg de café de spécialité torréfié à la commande, micro-lots, livraison express 48h" },
+];
 
 export default function Home() {
   return (
     <div>
+      {productSchemas.map((p) => (
+        <JsonLd
+          key={p.name}
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: `Abonnement Cafés Lumière — ${p.name}`,
+            description: p.desc,
+            brand: { "@type": "Brand", name: "Cafés Lumière" },
+            offers: {
+              "@type": "Offer",
+              url: "https://cafes-lumiere.vercel.app/pricing",
+              priceCurrency: "EUR",
+              price: p.price,
+              priceValidUntil: "2027-12-31",
+              availability: "https://schema.org/InStock",
+              seller: { "@type": "Organization", name: "Cafés Lumière" },
+            },
+            aggregateRating: {
+              "@type": "AggregateRating",
+              ratingValue: "4.9",
+              reviewCount: "127",
+            },
+          }}
+        />
+      ))}
       {/* Hero */}
       <section className="py-20 px-4 text-center max-w-3xl mx-auto">
         <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6">
@@ -48,7 +81,7 @@ export default function Home() {
       </section>
 
       {/* Pricing preview */}
-      <section className="py-16 px-4 max-w-5xl mx-auto">
+      <section id="pricing" className="py-16 px-4 max-w-5xl mx-auto">
         <h2 className="font-serif text-3xl font-bold text-center mb-4">Un abonnement pour chaque tasse</h2>
         <p className="text-center text-smoke mb-12 max-w-lg mx-auto">Sans engagement. Résiliable à tout moment. Livraison offerte.</p>
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
