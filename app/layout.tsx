@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import JsonLd from "./components/JsonLd";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -78,6 +79,96 @@ export default function RootLayout({
   return (
     <html lang="fr">
       <body className="min-h-screen flex flex-col">
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Cafés Lumière",
+            url: "https://cafes-lumiere.vercel.app",
+            logo: "https://cafes-lumiere.vercel.app/logo.png",
+            description:
+              "Abonnement mensuel de café de spécialité, torréfié à la commande et livré chez vous.",
+            email: "bonjour@cafes-lumiere.fr",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "10 rue de la Torréfaction",
+              addressLocality: "Paris",
+              postalCode: "75011",
+              addressCountry: "FR",
+            },
+            sameAs: [],
+          }}
+        />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            name: "Cafés Lumière",
+            image: "https://cafes-lumiere.vercel.app/logo.png",
+            url: "https://cafes-lumiere.vercel.app",
+            telephone: "",
+            email: "bonjour@cafes-lumiere.fr",
+            address: {
+              "@type": "PostalAddress",
+              streetAddress: "10 rue de la Torréfaction",
+              addressLocality: "Paris",
+              postalCode: "75011",
+              addressCountry: "FR",
+            },
+            priceRange: "€€",
+            openingHoursSpecification: {
+              "@type": "OpeningHoursSpecification",
+              dayOfWeek: [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+              ],
+              opens: "09:00",
+              closes: "18:00",
+            },
+          }}
+        />
+        <JsonLd
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Product",
+            name: "Abonnement Cafés Lumière",
+            description:
+              "Café de spécialité torréfié à la demande, livré chaque mois. 3 formules : Découverte (250g), Duo (500g), Famille (1kg).",
+            brand: { "@type": "Brand", name: "Cafés Lumière" },
+            offers: [
+              {
+                "@type": "Offer",
+                name: "Découverte",
+                price: "19.00",
+                priceCurrency: "EUR",
+                availability: "https://schema.org/InStock",
+                url: "https://cafes-lumiere.vercel.app/pricing",
+                description: "250g de café de spécialité par mois",
+              },
+              {
+                "@type": "Offer",
+                name: "Duo",
+                price: "29.00",
+                priceCurrency: "EUR",
+                availability: "https://schema.org/InStock",
+                url: "https://cafes-lumiere.vercel.app/pricing",
+                description: "500g de café de spécialité par mois",
+              },
+              {
+                "@type": "Offer",
+                name: "Famille",
+                price: "49.00",
+                priceCurrency: "EUR",
+                availability: "https://schema.org/InStock",
+                url: "https://cafes-lumiere.vercel.app/pricing",
+                description: "1kg de café de spécialité par mois",
+              },
+            ],
+          }}
+        />
         <Header />
         <main className="flex-1">{children}</main>
         <Footer />
