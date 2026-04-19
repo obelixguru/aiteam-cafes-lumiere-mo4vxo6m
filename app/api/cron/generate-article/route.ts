@@ -89,14 +89,33 @@ Pour tirer le meilleur de votre café de spécialité, quelques règles simples 
 *Envie de découvrir de nouveaux cafés de spécialité torréfiés à la demande ? [Découvrez notre abonnement mensuel](https://cafes-lumiere.vercel.app/pricing) — 19€/mois, sans engagement.*`
   }
 
+  // Fetch a relevant Unsplash image for the article
+  let coverImage = 'https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&auto=format&fit=crop'
+  let coverAlt = 'Café de spécialité'
+  const unsplashKey = process.env.UNSPLASH_ACCESS_KEY
+  if (unsplashKey) {
+    try {
+      const uRes = await fetch(
+        `https://api.unsplash.com/photos/random?query=specialty+coffee&orientation=landscape&client_id=${unsplashKey}`
+      )
+      if (uRes.ok) {
+        const uData = await uRes.json()
+        coverImage = `${uData.urls?.regular || coverImage}`
+        coverAlt = uData.alt_description || uData.description || coverAlt
+      }
+    } catch {
+      // fallback to default image
+    }
+  }
+
   const frontmatter = `---
 title: "${topic.charAt(0).toUpperCase() + topic.slice(1)}"
 slug: "${slug}"
 date: "${today}"
 category: "guide"
 excerpt: "Tout ce que vous devez savoir sur ${topic} — guide complet pour les amateurs de café de spécialité."
-coverImage: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?w=800&auto=format&fit=crop"
-coverAlt: "Café de spécialité"
+coverImage: "${coverImage}"
+coverAlt: "${coverAlt}"
 ---
 
 `
