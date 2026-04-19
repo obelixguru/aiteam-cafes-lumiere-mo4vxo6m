@@ -169,7 +169,7 @@ export default function NotreDemarche() {
           <div className="flex gap-6">
             <Link href="/" className="hover:text-cream transition-colors">Accueil</Link>
             <Link href="/#pricing" className="hover:text-cream transition-colors">Abonnements</Link>
-            <Link href="#" className="hover:text-cream transition-colors">CGV</Link>
+            <Link href="/cgv" className="hover:text-cream transition-colors">CGV</Link>
           </div>
         </div>
       </footer>
