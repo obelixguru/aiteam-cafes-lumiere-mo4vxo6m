@@ -130,7 +130,7 @@ export default function BlogPage() {
           </h2>
           <p className="text-smoke mb-6">+ les offres exclusives et les nouveautés origines.</p>
           <Link
-            href="/#newsletter"
+            href="/contact"
             className="inline-block bg-lumiere text-roast px-8 py-3.5 rounded-full font-bold hover:bg-lumiere/90 transition-colors"
           >
             S&apos;inscrire à la newsletter
