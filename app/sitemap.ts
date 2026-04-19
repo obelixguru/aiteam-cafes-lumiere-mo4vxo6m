@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
 
-const BASE_URL = 'https://cafes-lumiere-qi6okvehs-nueve9.vercel.app'
+const BASE_URL = 'https://cafes-lumiere.vercel.app'
 
 function getBlogSlugs(): string[] {
   const dir = path.join(process.cwd(), 'content/blog')

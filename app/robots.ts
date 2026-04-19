@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: '/',
       disallow: ['/api/', '/checkout/'],
     },
-    sitemap: 'https://cafes-lumiere-qi6okvehs-nueve9.vercel.app/sitemap.xml',
+    sitemap: 'https://cafes-lumiere.vercel.app/sitemap.xml',
   }
 }

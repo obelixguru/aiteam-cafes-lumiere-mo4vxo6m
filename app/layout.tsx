@@ -4,9 +4,30 @@ import JsonLd from "./components/JsonLd";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Cafés Lumière — Café de spécialité torréfié à la demande",
+  metadataBase: new URL("https://cafes-lumiere.vercel.app"),
+  title: {
+    default: "Cafés Lumière — Café de spécialité torréfié à la demande",
+    template: "%s | Cafés Lumière",
+  },
   description:
     "Abonnement mensuel de café de spécialité, torréfié à la commande et livré chez vous. Découvrez de nouveaux producteurs chaque mois dès 19 €.",
+  keywords: ["abonnement café", "café de spécialité", "torréfié à la demande", "café grain frais", "box café France"],
+  openGraph: {
+    type: "website",
+    locale: "fr_FR",
+    siteName: "Cafés Lumière",
+    title: "Cafés Lumière — Café de spécialité torréfié à la demande",
+    description: "Abonnement mensuel de café de spécialité, torréfié à la commande. Dès 19 €/mois, sans engagement.",
+    url: "https://cafes-lumiere.vercel.app",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Cafés Lumière — Café torréfié à la demande",
+    description: "Abonnement café de spécialité dès 19 €/mois. Grain frais, producteurs d'exception, livré chez vous.",
+  },
+  alternates: {
+    canonical: "https://cafes-lumiere.vercel.app",
+  },
 };
 
 function Header() {
