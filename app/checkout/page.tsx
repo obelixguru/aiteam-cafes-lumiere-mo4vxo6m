@@ -42,11 +42,24 @@ function CheckoutInner() {
 
   const handleSubmit = async () => {
     setIsPending(true);
-    // Simulate payment processing
-    await new Promise((r) => setTimeout(r, 1000));
-    router.push(
-      `/checkout/confirmation?plan=${plan}&price=${price}&email=${encodeURIComponent(email)}&firstName=${encodeURIComponent(firstName)}`
-    );
+    try {
+      const res = await fetch('/api/checkout/create-session', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan, email }),
+      });
+      const data = await res.json();
+      if (data.url) {
+        window.location.href = data.url;
+        return;
+      }
+      // Mock mode or missing Stripe key
+      router.push(`/checkout/confirmation?plan=${plan}&price=${price}&email=${encodeURIComponent(email)}&firstName=${encodeURIComponent(firstName)}`);
+    } catch {
+      router.push(`/checkout/confirmation?plan=${plan}&price=${price}&email=${encodeURIComponent(email)}&firstName=${encodeURIComponent(firstName)}`);
+    } finally {
+      setIsPending(false);
+    }
   };
 
   return (
