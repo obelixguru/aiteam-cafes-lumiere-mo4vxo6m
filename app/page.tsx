@@ -1,9 +1,10 @@
 import Link from "next/link";
+import Image from "next/image";
 import JsonLd from "./components/JsonLd";
 
 const productSchemas = [
   { name: "Découverte", price: "19.00", desc: "250g de café de spécialité torréfié à la commande, 1 origine, mouture personnalisée" },
-  { name: "Duo", price: "29.00", desc: "500g de café de spécialité torréfié à la commande, 2 origines, notes de dégustation" },
+  { name: "Duo", price: "35.00", desc: "500g de café de spécialité torréfié à la commande, 2 origines, mug céramique offert" },
   { name: "Famille", price: "49.00", desc: "1kg de café de spécialité torréfié à la commande, micro-lots, livraison express 48h" },
 ];
 
@@ -37,20 +38,33 @@ export default function Home() {
         />
       ))}
       {/* Hero */}
-      <section className="py-20 px-4 text-center max-w-3xl mx-auto">
-        <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6">
-          Café de spécialité,<br />torréfié pour vous ce matin.
-        </h1>
-        <p className="text-lg text-smoke mb-8 max-w-xl mx-auto">
-          Découvrez de nouveaux producteurs chaque mois. Grain frais, torréfié à la commande, livré chez vous.
-        </p>
-        <Link
-          href="/pricing"
-          className="inline-block bg-roast text-cream px-8 py-4 rounded-lg text-lg font-semibold hover:bg-bark transition-colors"
-        >
-          Découvrir dès 19 €/mois
-        </Link>
-        <p className="mt-4 text-sm text-smoke">Sans engagement · Livraison offerte · Torréfié en France</p>
+      <section className="relative py-20 px-4 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="text-center md:text-left">
+            <h1 className="font-serif text-4xl md:text-6xl font-bold leading-tight mb-6">
+              Café de spécialité,<br />torréfié pour vous ce matin.
+            </h1>
+            <p className="text-lg text-smoke mb-8 max-w-xl">
+              Découvrez de nouveaux producteurs chaque mois. Grain frais, torréfié à la commande, livré chez vous.
+            </p>
+            <Link
+              href="/pricing"
+              className="inline-block bg-roast text-cream px-8 py-4 rounded-lg text-lg font-semibold hover:bg-bark transition-colors"
+            >
+              Découvrir dès 19 €/mois
+            </Link>
+            <p className="mt-4 text-sm text-smoke">Sans engagement · Livraison offerte · Torréfié en France</p>
+          </div>
+          <div className="relative aspect-[4/3] rounded-2xl overflow-hidden">
+            <Image
+              src="https://images.unsplash.com/photo-1753109818506-2c4c39c16c9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w4NzM5NjF8MHwxfHNlYXJjaHwxfHxzcGVjaWFsdHklMjBjb2ZmZWUlMjBwb3VyJTIwb3ZlcnxlbnwwfDB8fHwxNzc2ODg4NTE3fDA&ixlib=rb-4.1.0&q=80&w=1080"
+              alt="Grains de café de spécialité et outils d'extraction artisanale"
+              fill
+              className="object-cover"
+              priority
+            />
+          </div>
+        </div>
       </section>
 
       {/* Social proof */}
@@ -87,8 +101,8 @@ export default function Home() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             { name: "Découverte", price: "19", desc: "250g · 1 origine · Mouture personnalisée", popular: false },
-            { name: "Duo", price: "29", desc: "500g · 2 origines · Notes de dégustation", popular: true },
-            { name: "Famille", price: "49", desc: "1kg · Micro-lots · Livraison express 48h", popular: false },
+            { name: "Duo", price: "35", desc: "500g · 2 origines · Mug céramique offert", popular: true },
+            { name: "Famille", price: "49", desc: "1kg · Micro-lots · Visite torréfacteur virtuelle", popular: false },
           ].map((tier) => (
             <div key={tier.name} className={`relative rounded-2xl p-6 border ${tier.popular ? "border-lumiere bg-foam/30 ring-2 ring-lumiere" : "border-foam"}`}>
               {tier.popular && <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-lumiere text-roast text-xs font-bold px-3 py-1 rounded-full">Populaire</span>}

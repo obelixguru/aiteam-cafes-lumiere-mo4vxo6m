@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        roast: "#3D1F0D",
-        lumiere: "#F5A623",
+        roast: "#1A120B",
+        lumiere: "#E85D04",
         grain: "#8B5E3C",
-        cream: "#FDF8F2",
-        foam: "#EDE0CC",
-        bark: "#4A3728",
+        cream: "#FAFAF7",
+        foam: "#E6DCD3",
+        bark: "#3D1F0D",
         smoke: "#9E8C7B",
         fresh: "#2D6A4F",
       },

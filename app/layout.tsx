@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import JsonLd from "./components/JsonLd";
+import MobileNav from "./components/MobileNav";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -37,6 +38,7 @@ function Header() {
         <Link href="/" className="font-serif text-xl font-bold tracking-tight">
           Cafés <span className="text-lumiere">Lumière</span>
         </Link>
+        <MobileNav />
         <div className="hidden md:flex items-center gap-6 text-sm font-medium">
           <Link href="/#comment-ca-marche" className="hover:text-lumiere transition-colors">Comment ça marche</Link>
           <Link href="/pricing" className="hover:text-lumiere transition-colors">Tarifs</Link>
@@ -172,11 +174,11 @@ export default function RootLayout({
               {
                 "@type": "Offer",
                 name: "Duo",
-                price: "29.00",
+                price: "35.00",
                 priceCurrency: "EUR",
                 availability: "https://schema.org/InStock",
                 url: "https://cafes-lumiere.vercel.app/pricing",
-                description: "500g de café de spécialité par mois",
+                description: "500g de café de spécialité par mois + mug céramique offert",
               },
               {
                 "@type": "Offer",
