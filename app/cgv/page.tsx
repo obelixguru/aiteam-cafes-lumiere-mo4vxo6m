@@ -20,7 +20,7 @@ export default function CGV() {
       <p>Cafés Lumière propose trois formules d&apos;abonnement mensuel :</p>
       <ul>
         <li><strong>Découverte</strong> — 19 €/mois : 250 g de café en grain, torréfié à la commande, une origine sélectionnée.</li>
-        <li><strong>Duo</strong> — 29 €/mois : 500 g de café en grain, torréfié à la commande, deux origines.</li>
+        <li><strong>Duo</strong> — 35 €/mois : 500 g de café en grain, torréfié à la commande, deux origines + mug céramique offert.</li>
         <li><strong>Famille</strong> — 49 €/mois : 1 kg de café en grain, torréfié à la commande, deux origines + un café surprise.</li>
       </ul>
       <p>Les abonnements annuels bénéficient d&apos;une remise de 15 % (soit 2 mois offerts).</p>

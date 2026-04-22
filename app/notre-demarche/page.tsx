@@ -4,7 +4,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import { Leaf, HandHeart, MagnifyingGlass, ArrowRight } from "@phosphor-icons/react";
-import Nav from "../components/Nav";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -17,11 +16,9 @@ const stagger = {
 
 export default function NotreDemarche() {
   return (
-    <main className="min-h-screen bg-cream text-roast font-sans">
-      <Nav />
-
+    <div>
       {/* Hero */}
-      <section className="pt-32 pb-20 px-4 sm:px-6 max-w-5xl mx-auto">
+      <section className="pt-16 pb-20 px-4 sm:px-6 max-w-5xl mx-auto">
         <motion.div initial="hidden" animate="visible" variants={stagger} className="text-center">
           <motion.span variants={fadeUp} className="inline-block bg-fresh/10 text-fresh font-semibold text-xs uppercase tracking-widest px-3 py-1.5 rounded-full mb-6">
             Notre démarche
@@ -162,17 +159,6 @@ export default function NotreDemarche() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-roast border-t border-bark text-smoke py-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-          <p>© {new Date().getFullYear()} Cafés Lumière</p>
-          <div className="flex gap-6">
-            <Link href="/" className="hover:text-cream transition-colors">Accueil</Link>
-            <Link href="/#pricing" className="hover:text-cream transition-colors">Abonnements</Link>
-            <Link href="/cgv" className="hover:text-cream transition-colors">CGV</Link>
-          </div>
-        </div>
-      </footer>
-    </main>
+    </div>
   );
 }

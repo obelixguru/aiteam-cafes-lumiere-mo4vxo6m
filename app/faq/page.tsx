@@ -4,12 +4,11 @@ import { useState } from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { CaretDown, ArrowRight } from "@phosphor-icons/react";
-import Nav from "../components/Nav";
 
 const faqs = [
   {
     q: "Comment fonctionne l'abonnement ?",
-    a: "Choisissez votre formule (Découverte, Passion ou Expert), et recevez chaque mois votre café de spécialité torréfié à la demande. Vous pouvez modifier ou annuler à tout moment, sans frais.",
+    a: "Choisissez votre formule (Découverte, Duo ou Famille), et recevez chaque mois votre café de spécialité torréfié à la demande. Vous pouvez modifier ou annuler à tout moment, sans frais.",
   },
   {
     q: "Quand est torréfié mon café ?",
@@ -29,7 +28,7 @@ const faqs = [
   },
   {
     q: "Livrez-vous partout en France ?",
-    a: "Oui, en France métropolitaine. Livraison offerte sur tous les abonnements. Livraison express 24h disponible sur l'abonnement Expert.",
+    a: "Oui, en France métropolitaine. Livraison offerte sur tous les abonnements. Livraison express 48h disponible sur l'abonnement Famille.",
   },
   {
     q: "Quelle est votre politique de remboursement ?",
@@ -45,7 +44,7 @@ const faqs = [
   },
   {
     q: "Quelle quantité de café vais-je recevoir ?",
-    a: "Découverte : 250g/mois (environ 15 tasses). Passion : 500g/mois (environ 30 tasses). Expert : 1kg/mois (environ 60 tasses).",
+    a: "Découverte : 250g/mois (environ 15 tasses). Duo : 500g/mois (environ 30 tasses). Famille : 1kg/mois (environ 60 tasses).",
   },
   {
     q: "Comment sont sélectionnés vos cafés ?",
@@ -81,9 +80,8 @@ function FaqItem({ q, a }: { q: string; a: string }) {
 
 export default function FaqPage() {
   return (
-    <main className="min-h-screen bg-cream text-roast font-sans">
-      <Nav />
-      <section className="pt-32 pb-20 px-4 sm:px-6 max-w-3xl mx-auto">
+    <div>
+      <section className="pt-16 pb-20 px-4 sm:px-6 max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -111,17 +109,6 @@ export default function FaqPage() {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-roast text-smoke py-8">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-sm">
-          <p>© {new Date().getFullYear()} Cafés Lumière</p>
-          <div className="flex gap-6">
-            <Link href="/" className="hover:text-cream transition-colors">Accueil</Link>
-            <Link href="/#pricing" className="hover:text-cream transition-colors">Abonnements</Link>
-            <Link href="/notre-demarche" className="hover:text-cream transition-colors">Notre démarche</Link>
-          </div>
-        </div>
-      </footer>
-    </main>
+    </div>
   );
 }

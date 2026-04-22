@@ -5,7 +5,7 @@ import Link from "next/link";
 import { List, X } from "@phosphor-icons/react";
 
 const links = [
-  { href: "/#comment", label: "Comment ça marche" },
+  { href: "/#comment-ca-marche", label: "Comment ça marche" },
   { href: "/#pricing", label: "Abonnements" },
   { href: "/blog", label: "Blog" },
   { href: "/notre-demarche", label: "Notre démarche" },
